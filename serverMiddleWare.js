@@ -13,6 +13,7 @@ app.use(webpackDevMiddleware(compiler,{//执行webpackDevMiddleware的node中间
 
 app.use(webpackHotMiddleware(compiler));
 
+
 app.listen(9999,function(){//将服务启动在9999端口下
     console.log('示例服务器的端口为9999');
 });
