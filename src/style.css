@@ -1,0 +1,22 @@
+
+@font-face{
+    font-family: 'myfont';
+    font-weight: 600;
+    font-style: normal;
+    src: url('./assets/font/webfontnew.woff2') format('woff2'),
+    url('./assets/font/webfontnew.woff') format('woff');
+    /* src: url('./assets/font/webfontnew.eot');
+    src: url('./assets/font/webfontnew.eot?#iefix') format('embedded-opentype'),
+    url('./assets/font/webfontnew.ttf') format('truetype'),
+    url('./assets/font/webfontnew.svg#webfont') format('svg'); */
+}
+
+
+.hellow{
+    color:red;
+    background: url('./assets/icon.png');
+    font-family: 'myfont'!important;
+    font-size: 26px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
