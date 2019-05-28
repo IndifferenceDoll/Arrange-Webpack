@@ -8,9 +8,9 @@
     "build": "webpack --config webpack.config.js",
     "watch": "webpack --watch",
     "start": "webpack-dev-server --open",
-    "serverMiddleWare": "node serverMiddleWare.js",
     "serverHot": "webpack-dev-server --hotOnly",
-    "serverDevServer": "node serverDevServer.js"
+    "serverDevServer": "node serverDevServer.js",
+    "serverMiddleWare": "node serverMiddleWare.js"
   },
   "author": "jin",
   "license": "ISC",

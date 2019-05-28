@@ -29,6 +29,7 @@ module.exports = {
     //     port:9999,//表示端口配置
     //     hot:true,//启动模块热替换
     // },
+    mode: "production",//development
     plugins:[
         new ManifestPlugin(),
         new CleanWebpackPlugin(),
