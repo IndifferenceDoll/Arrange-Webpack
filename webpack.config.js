@@ -34,11 +34,15 @@ module.exports = {
         new ManifestPlugin(),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            inject:false,
-            template:HtmlWebpackTemp,
-            
-            appMountId:'app',
-            title:'输出管理',
+            // inject:false,
+            // template:HtmlWebpackTemp,
+            // appMountId:'app',
+            // title:'输出管理',
+
+            // filename: './index.html',
+            template: './src/index.html',
+            chunksSortMode: 'manual',
+            chunks: ['manifest', 'venders', 'app','print','commons'],
         }),
         new webpack.NamedModulesPlugin(),//使查看要修补的依赖变得更容易
         new webpack.HotModuleReplacementPlugin(),//模块热替换的插件
@@ -61,6 +65,11 @@ module.exports = {
     },
     module:{
         rules:[
+            { 
+                test: /\.js$/, 
+                exclude: /node_modules/, 
+                loader: "babel-loader" 
+            },
             {
                 test:/\.css$/,
                 use:['style-loader','css-loader'],
