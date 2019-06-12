@@ -37,6 +37,15 @@ module.exports = {
     },
     module:{
         rules:[
+            {
+                test:/\.txt$/,
+                use:{
+                    loader:path.resolve(__dirname,'./src/loader/txt-loader.js'),
+                    options:{
+                        name:'HELLOW WORLD!'
+                    }
+                }
+            },
             { 
                 test: /\.js$/, 
                 exclude: /node_modules/, 

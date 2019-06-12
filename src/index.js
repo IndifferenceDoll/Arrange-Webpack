@@ -5,6 +5,7 @@ import Data from '$assets/data.xml';
 import printMe from './print';
 import qs from 'query-string';
 import { cube } from './math';
+import txtStr from '$assets/test.txt';
 
 function component() {
     // var element = document.createElement('div');
@@ -32,6 +33,7 @@ function component() {
 
     console.log(Data);
     console.log('index',qs.parse(window.location.search));
+    console.log('txtStr',txtStr);
   
     return element;
   }
