@@ -9,6 +9,7 @@ import txtStr from '$assets/test.txt';
 
 ha1
 
+ha2
 
 function throttle(fn, threshhold = 3000) {
   let timeout;
