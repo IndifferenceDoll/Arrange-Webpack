@@ -3,6 +3,8 @@ const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const MinifyPlugin = require("babel-minify-webpack-plugin");
 const webpack = require('webpack');//引入webpack构造函数
+const CompileTemp = require('./src/plugins/compileTemp.js');
+const path = require('path');
 
 module.exports = merge(common,{
     plugins:[
@@ -10,6 +12,14 @@ module.exports = merge(common,{
         new MinifyPlugin(),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV':JSON.stringify(process.env.NODE_ENV)
+        }),
+        new CompileTemp({
+            template: './src/assets/testTemplate.html',
+            filename: path.resolve(__dirname, './src/afterCompileTemp.html'),
+            params: {
+            title: 'HELLOW WORLD!',
+            name: 'HELLOW'
+            }
         })
     ],
     devtool:'inline-source-map',

@@ -7,6 +7,24 @@ import qs from 'query-string';
 import { cube } from './math';
 import txtStr from '$assets/test.txt';
 
+function throttle(fn, threshhold = 3000) {
+  let timeout;
+  let isNotAllow = false;
+  return function () {
+    if (isNotAllow) return;
+    isNotAllow = true;
+    fn();
+    timeout = setTimeout(() => {
+      clearTimeout(timeout);
+      timeout = null;
+      isNotAllow = false;
+    }, threshhold);
+  };
+}
+const mousemove = throttle((e) => {
+  console.log(1);
+});
+
 function component() {
     // var element = document.createElement('div');
     var element = document.getElementById('app');
@@ -17,7 +35,8 @@ function component() {
     element.classList.add('hellow');
 
     btn.innerHTML = 'Click me and check the console!';
-    btn.onclick = printMe;
+    // btn.onclick = printMe;
+    btn.onclick = mousemove;
 
     element.appendChild(btn);
 
