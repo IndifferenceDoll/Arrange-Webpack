@@ -7,9 +7,9 @@ import qs from 'query-string';
 import { cube } from './math';
 import txtStr from '$assets/test.txt';
 
-ha1
+哥斯拉1
 
-ha2
+哥斯拉2
 
 function throttle(fn, threshhold = 3000) {
   let timeout;
