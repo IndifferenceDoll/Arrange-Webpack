@@ -15,7 +15,8 @@ module.exports = merge(common,{
         }),
         new CompileTemp({
             template: './src/assets/testTemplate.html',
-            filename: path.resolve(__dirname, './src/afterCompileTemp.html'),
+            // filename: path.resolve(__dirname, './src/afterCompileTemp.html'),
+            filename: path.resolve(__dirname, './dist/index.html'),
             params: {
             title: 'HELLOW WORLD!',
             name: 'HELLOW'
@@ -24,10 +25,11 @@ module.exports = merge(common,{
     ],
     devtool:'inline-source-map',
     devServer:{
-        contentBase:'./dist',
-            compress:true,//表示dist文件夹下的文件做gzip压缩
-            port:9988,//表示端口配置
-            hot:true,//启动模块热替换
+        // contentBase:'./dist',
+        compress:true,//表示dist文件夹下的文件做gzip压缩
+        port:80,//表示端口配置
+        hot:true,//启动模块热替换
+        disableHostCheck: true,
     },
     mode:'development',
 })

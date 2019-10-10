@@ -20,8 +20,11 @@ module.exports = {
             chunkFilename: '[id].css',
           }),
         new HtmlWebpackPlugin({
-            inject:false,
-            template:HtmlWebpackTemp,
+            title:'Production',
+            // inject:false,
+            // template:HtmlWebpackTemp,
+            filename: 'index.html',
+            template: './src/index.html',
             appMountId:'app',
             title:'Production',
         })
