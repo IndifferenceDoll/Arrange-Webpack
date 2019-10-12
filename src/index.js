@@ -137,14 +137,18 @@ function component() {
 
   var url = location.href.split('#')[0];
   
-  var signature = hexSha1(`jsapi_ticket=kgt8ON7yVITDhtdwci0qeaux7iTNRHfErONWE-kOXrgdnuWxSD9C_SgELpFpPgqlRdM1EksZZKu21_xOLEAsWQ&noncestr=Wm3WZYTPz0wzccnW&timestamp=1570698983&url=${url}`);
+  var signature = hexSha1(`jsapi_ticket=kgt8ON7yVITDhtdwci0qeaux7iTNRHfErONWE-kOXrhaWbUYQq8i0NSWy8W1agCTUpCKHiXP3x0B7qMHZCgQ0w&noncestr=Wm3WZYTPz0wzccnW&timestamp=1570848402&url=${url}`);
 
   document.body.appendChild(ele);
+ 
+  // window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1c4e57eecadc7294&redirect_uri=http://jinyue3.applinzi.com&response_type=code&scope=snsapi_userinfo&state=110#wechat_redirect';
+  //应用授权作用域，snsapi_base （不弹出授权页面，直接跳转，只能获取用户openid），snsapi_userinfo （弹出授权页面，可通过openid拿到昵称、性别、所在地。并且，即使在未关注的情况下，只要用户授权，也能获取其信息）
+  //服务号可以自动获取用户信息，企业订阅号通过用户触发也能获取，但是个人订阅号不能获取用户信息。
 
   wx.config({
   debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
   appId: 'wx1c4e57eecadc7294', // 必填，公众号的唯一标识
-  timestamp:1570698983, // 必填，生成签名的时间戳
+  timestamp:1570848402, // 必填，生成签名的时间戳
   nonceStr: 'Wm3WZYTPz0wzccnW', // 必填，生成签名的随机串
   signature: signature,// 必填，签名 http://jinyue3.applinzi.com/
   jsApiList: ['getLocation'] // 必填，需要使用的JS接口列表
