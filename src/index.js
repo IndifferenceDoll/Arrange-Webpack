@@ -130,7 +130,6 @@ function component() {
 
     element.appendChild(div);
   }
-  
   var ele = component();
   testRequesrAnimationFrame();
   testSprites();

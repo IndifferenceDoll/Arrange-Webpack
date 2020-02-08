@@ -27,7 +27,7 @@ module.exports = merge(common,{
     devServer:{
         // contentBase:'./dist',
         compress:true,//表示dist文件夹下的文件做gzip压缩
-        port:80,//表示端口配置
+        port:8099,//表示端口配置
         hot:true,//启动模块热替换
         disableHostCheck: true,
     },

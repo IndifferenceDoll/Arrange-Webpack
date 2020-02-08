@@ -9,6 +9,7 @@ module.exports = {
     entry:{
         app:'./src/index.js',
         print:'./src/print.js',
+        test:'./src/test.js',
         commons:['lodash','webpack-hot-middleware/client?noInfo=true&reload=true'],
     },
     output:{
